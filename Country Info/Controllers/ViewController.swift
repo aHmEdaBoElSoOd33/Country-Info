@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         for i in searchTxt{
             if i == "." || i == " "{
                 continue
-            }else{
+            }else {
                 fetchedSearch += String(i)
             }
             
@@ -83,8 +83,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func locationBtn(_ sender: Any) {
+       
         searchTxtFeild.text = "Your Location"
         currntLocationHandel.isHidden = false
+        currntLocationHandel.text = "It may takes few seconds"
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
@@ -112,11 +114,32 @@ extension ViewController : CountryApiDelegate {
         print(country)
          print(country.maps.googleMaps)
         DispatchQueue.main.async {
-            self.countryName.text = country.name.common
-            self.countryCapital.text = country.capital[0]
-            self.regionLbl.text = country.region
-            self.population.text = "\(country.population)"
-            self.mapLink1 = country.maps.googleMaps
+           
+            if country.name.common.lowercased() == "israel" {
+                self.currntLocationHandel.isHidden = false
+                self.currntLocationHandel.text = "do you mean Palestine?"
+                self.countryName.text = "Not found"
+                self.countryCapital.text = "Not found"
+                self.regionLbl.text = "Not found"
+                self.population.text = "Not found"
+                self.googleMapBtn.isHidden = true
+                //self.mapLink1 = country.maps.googleMaps
+                 
+            }else if country.name.common.lowercased() == "palestine"{
+                self.countryName.text = country.name.common
+                self.countryCapital.text = "Jerusalem"
+                self.regionLbl.text = country.region
+                self.population.text = "\(country.population)"
+                self.mapLink1 = country.maps.googleMaps
+                 
+            }else{
+                
+                self.countryName.text = country.name.common
+                self.countryCapital.text = country.capital[0]
+                self.regionLbl.text = country.region
+                self.population.text = "\(country.population)"
+                self.mapLink1 = country.maps.googleMaps
+            }
         }
     }
 }
@@ -132,7 +155,6 @@ extension ViewController: CLLocationManagerDelegate  {
                 self.countryApi.fetchData(country: self.currentLocation)
              }
         }
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
