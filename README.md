@@ -1,6 +1,6 @@
 # Country-Info
 
-## This app show you inforation about the country you search for & the country where you exist 
+## This app show you information about the country you search for & the country where you exist 
 
 using :
 ### MVC Desgin Pattern 
