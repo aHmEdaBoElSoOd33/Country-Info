@@ -15,7 +15,9 @@
 		9A59949924F6B54F00C6164C /* Country_InfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59949824F6B54F00C6164C /* Country_InfoTests.swift */; };
 		9A5994A424F6B54F00C6164C /* Country_InfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5994A324F6B54F00C6164C /* Country_InfoUITests.swift */; };
 		9A5994B924F6B76900C6164C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5994B724F6B76900C6164C /* Main.storyboard */; };
+		E21FE8D1295E752B00B81E3F /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21FE8D0295E752B00B81E3F /* Country.swift */; };
 		E241E972295D0FFF0001ADF8 /* CountryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241E971295D0FFF0001ADF8 /* CountryApi.swift */; };
+		E2836C32295EB86700B17FC7 /* GoogleMapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2836C31295EB86700B17FC7 /* GoogleMapsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,9 @@
 		9A5994A324F6B54F00C6164C /* Country_InfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country_InfoUITests.swift; sourceTree = "<group>"; };
 		9A5994A524F6B54F00C6164C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A5994B824F6B76900C6164C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E21FE8D0295E752B00B81E3F /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		E241E971295D0FFF0001ADF8 /* CountryApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryApi.swift; sourceTree = "<group>"; };
+		E2836C31295EB86700B17FC7 /* GoogleMapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,12 +132,29 @@
 			path = "Country InfoUITests";
 			sourceTree = "<group>";
 		};
+		E21FE8CE295E74D300B81E3F /* Pojo */ = {
+			isa = PBXGroup;
+			children = (
+				E21FE8D0295E752B00B81E3F /* Country.swift */,
+			);
+			path = Pojo;
+			sourceTree = "<group>";
+		};
+		E21FE8CF295E74DB00B81E3F /* DataBaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				E241E971295D0FFF0001ADF8 /* CountryApi.swift */,
+			);
+			path = DataBaseManager;
+			sourceTree = "<group>";
+		};
 		E241E96E295CF64F0001ADF8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				9A59948124F6B54E00C6164C /* AppDelegate.swift */,
 				9A59948324F6B54E00C6164C /* SceneDelegate.swift */,
 				9A59948524F6B54E00C6164C /* ViewController.swift */,
+				E2836C31295EB86700B17FC7 /* GoogleMapsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,7 +171,8 @@
 		E241E970295CF6550001ADF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E241E971295D0FFF0001ADF8 /* CountryApi.swift */,
+				E21FE8CE295E74D300B81E3F /* Pojo */,
+				E21FE8CF295E74DB00B81E3F /* DataBaseManager */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +310,8 @@
 				9A59948624F6B54E00C6164C /* ViewController.swift in Sources */,
 				E241E972295D0FFF0001ADF8 /* CountryApi.swift in Sources */,
 				9A59948224F6B54E00C6164C /* AppDelegate.swift in Sources */,
+				E21FE8D1295E752B00B81E3F /* Country.swift in Sources */,
+				E2836C32295EB86700B17FC7 /* GoogleMapsVC.swift in Sources */,
 				9A59948424F6B54E00C6164C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NU3L58K3P3;
 				INFOPLIST_FILE = "Country Info/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,6 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NU3L58K3P3;
 				INFOPLIST_FILE = "Country Info/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
